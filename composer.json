@@ -1,0 +1,21 @@
+{
+    "name": "guanguans/library",
+    "description": "常用类库工具包",
+    "type": "library",
+    "require": {
+        "php": ">=5.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "guanguans",
+            "email": "yzmguanguan@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Guanguans\\Library\\": "src/"
+        }
+    }
+}
