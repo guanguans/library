@@ -136,15 +136,14 @@ class Http
      * @return void
      */
     static public function download ($filename, $showname='',$content='',$expire=180) {
-        if(is_file($filename)) {
+        if (is_file($filename)) {
             $length = filesize($filename);
-        }elseif(is_file(UPLOAD_PATH.$filename)) {
-            $filename = UPLOAD_PATH.$filename;
-            $length = filesize($filename);
-        }elseif($content = '') {
+        } elseif (is_file($filename)) {
+            $filename = $filename;
+            $length   = filesize($filename);
+        } elseif ('' != $content) {
             $length = strlen($content);
-        }else {
-//            E($filename.L('下载文件不存在！'));
+        } else {
             exit('下载文件不存在！');
         }
         if(empty($showname)) {
