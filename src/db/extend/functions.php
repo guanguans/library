@@ -189,7 +189,7 @@ function L($name=null, $value=null) {
  * @return void|array
  */
 function trace($value='[think]',$label='',$level='DEBUG',$record=false) {
-    return Think\Think::trace($value,$label,$level,$record);
+    // return Think\Think::trace($value,$label,$level,$record);
 }
 
 /**

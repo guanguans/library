@@ -1,12 +1,8 @@
 <?php
 /**
- * ThinkPHP惯例配置文件
- * 该文件请不要修改，如果要覆盖惯例配置的值，可在应用配置文件中设定和惯例不符的配置项
- * 配置名称大小写任意，系统会统一转换成小写
- * 所有配置参数都可以在生效前动态改变
+ * mysql mysqli
  */
-return  array(
-    /* 数据库设置 */
+/*return  array(
     'DB_TYPE'         =>  'mysql',     // 数据库类型
     'DB_HOST'         =>  'localhost', // 服务器地址
     'DB_NAME'         =>  'thinkcmf5', // 数据库名
@@ -22,4 +18,47 @@ return  array(
     'DB_RW_SEPARATE'  =>  false,       // 数据库读写是否分离 主从式有效
     'DB_MASTER_NUM'   =>  1,           // 读写分离后 主服务器数量
     'DB_SLAVE_NO'     =>  '',          // 指定从服务器序号
+);*/
+
+/**
+ * sqlsrv
+ */
+/*return array(
+    'DB_TYPE'    =>  'sqlsrv', 
+    'DB_HOST'    =>  'localhost', // 若填写 '127.0.0.1' 报 '命名管道提供程序: 无法打开与 SQL Server 的连接' 错误
+    'DB_NAME'    =>  'bjy',
+    'DB_USER'    =>  'sa',
+    'DB_PWD'     =>  'root',
+    'DB_CHARSET' =>  'utf8',
+    'DB_PORT'    =>  '', // 端口 若填写 '1433' 报 'TCP 提供程序: 由于目标计算机积极拒绝，无法连接' 错误
+    'DB_PREFIX'  =>  '', 
+    'DB_PARAMS'       =>  array(),     
+    'DB_DEBUG'        =>  false,       
+    'DB_FIELDS_CACHE' =>  false,       
+    'DB_CHARSET'      =>  'utf8',      
+    'DB_DEPLOY_TYPE'  =>  0,           
+    'DB_RW_SEPARATE'  =>  false,       
+    'DB_MASTER_NUM'   =>  1,           
+    'DB_SLAVE_NO'     =>  '',          
+);*/
+
+/**
+ * sqlite
+ */
+return array(
+    'DB_TYPE'   => 'sqlite', 
+    'DB_NAME'   => './ci.db', 
+    'DB_HOST'   => 'localhost',
+    'DB_USER'   => 'guanguans', 
+    'DB_PWD'    => 'guanguans',
+    'DB_PORT'   => 3306, // 端口
+    'DB_PREFIX' => '', // 数据库表前缀
+    'DB_PARAMS'       =>  array(),     
+    'DB_DEBUG'        =>  false,       
+    'DB_FIELDS_CACHE' =>  false,       
+    'DB_CHARSET'      =>  'utf8',      
+    'DB_DEPLOY_TYPE'  =>  0,           
+    'DB_RW_SEPARATE'  =>  false,       
+    'DB_MASTER_NUM'   =>  1,           
+    'DB_SLAVE_NO'     =>  '',          
 );
