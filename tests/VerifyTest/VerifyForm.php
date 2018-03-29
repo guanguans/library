@@ -8,7 +8,7 @@
 <body>
 	<form action="VerifyCodeCheckTest.php" method="post" accept-charset="utf-8" class="col-lg-3">
 		<div class="form-group col-lg-9">
-			<img src="VerifyCodeCreateTest.php" alt="" width="100%">
+			<img src="./VerifyCodeCreateTest.php" alt="验证码" width="100%" onClick="this.src=this.src+'?'+Math.random();">
 		</div>
 		<div class="form-group col-lg-9">
 			<input type="text" name="VerifyCode" class="form-control" placeholder="请输入验证码">

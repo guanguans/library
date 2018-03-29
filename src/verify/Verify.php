@@ -1,57 +1,58 @@
-﻿<?php
+<?php
 // +----------------------------------------------------------------------
-// | Base64 ¼ÓÃÜÊµÏÖÀà
+// | 通用的树型类，可以生成任何树型结构
 // +----------------------------------------------------------------------
-// | Author: ¬g¬g <yzmguanguan@gmail.com>
+// | Author: 琯琯 <yzmguanguan@gmail.com>
 // +----------------------------------------------------------------------
 namespace guanguans\library\verify;
 
 class Verify
 {
     protected $config = array(
-        'seKey'    => 'ThinkPHP.CN', // ÑéÖ¤Âë¼ÓÃÜÃÜÔ¿
-        'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY', // ÑéÖ¤Âë×Ö·û¼¯ºÏ
-        'expire'   => 1800, // ÑéÖ¤Âë¹ýÆÚÊ±¼ä£¨s£©
-        'useZh'    => false, // Ê¹ÓÃÖÐÎÄÑéÖ¤Âë
-        'zhSet'    => 'ÃÇÒÔÎÒµ½Ëû»á×÷Ê±Òª¶¯¹ú²úµÄÒ»ÊÇ¹¤¾ÍÄê½×Òå·¢³É²¿Ãñ¿É³öÄÜ·½½øÔÚÁË²»ºÍÓÐ´óÕâÖ÷ÖÐÈËÉÏÎªÀ´·ÖÉú¶ÔÓÚÑ§ÏÂ¼¶µØ¸öÓÃÍ¬ÐÐÃæËµÖÖ¹ýÃü¶È¸ï¶ø¶à×Óºó×ÔÉç¼ÓÐ¡»úÒ²¾­Á¦Ïß±¾µç¸ßÁ¿³¤µ³µÃÊµ¼Ò¶¨Éî·¨±í×ÅË®Àí»¯ÕùÏÖËù¶þÆðÕþÈýºÃÊ®Õ½ÎÞÅ©Ê¹ÐÔÇ°µÈ·´ÌåºÏ¶·Â·Í¼°Ñ½áµÚÀïÕýÐÂ¿ªÂÛÖ®Îï´Óµ±Á½Ð©»¹Ìì×ÊÊÂ¶ÓÅúµãÓýÖØÆäË¼Óë¼äÄÚÈ¥Òò¼þÈÕÀûÏàÓÉÑ¹Ô±ÆøÒµ´úÈ«×éÊý¹ûÆÚµ¼Æ½¸÷»ù»òÔÂÃ«È»ÈçÓ¦ÐÎÏëÖÆÐÄÑù¸É¶¼Ïò±ä¹ØÎÊ±ÈÕ¹ÄÇËü×î¼°ÍâÃ»¿´ÖÎÌáÎå½âÏµÁÖÕßÃ×ÈºÍ·ÒâÖ»Ã÷ËÄµÀÂíÈÏ´ÎÎÄÍ¨µ«Ìõ½Ï¿ËÓÖ¹«¿×Áì¾üÁ÷Èë½ÓÏ¯Î»ÇéÔËÆ÷²¢·ÉÔ­ÓÍ·ÅÁ¢ÌâÖÊÖ¸½¨ÇøÑé»îÖÚºÜ½Ì¾öÌØ´Ë³£Ê¯Ç¿¼«ÍÁÉÙÒÑ¸ù¹²Ö±ÍÅÍ³Ê½×ª±ðÔìÇÐ¾ÅÄãÈ¡Î÷³Ö×ÜÁÏÁ¬ÈÎÖ¾¹Ûµ÷ÆßÃ´É½³Ì°Ù±¨¸ü¼û±ØÕæ±£ÈÈÎ¯ÊÖ¸Ä¹Ü´¦¼º½«ÐÞÖ§Ê¶²¡Ïó¼¸ÏÈÀÏ¹â×¨Ê²ÁùÐÍ¾ßÊ¾¸´°²´øÃ¿¶«ÔöÔòÍê·ç»ØÄÏ¹ãÀÍÂÖ¿Æ±±´ò»ý³µ¼Æ¸ø½Ú×öÎñ±»ÕûÁª²½Àà¼¯ºÅÁÐÎÂ×°¼´ºÁÖªÖáÑÐµ¥É«¼á¾ÝËÙ·ÀÊ·À­ÊÀÉè´ï¶û³¡Ö¯Àú»¨ÊÜÇó´«¿Ú¶Ï¿ö²É¾«½ð½çÆ·ÅÐ²Î²ãÖ¹±ßÇåÖÁÍòÈ·¾¿ÊéÊõ×´³§ÐëÀëÔÙÄ¿º£½»È¨ÇÒ¶ùÇà²ÅÖ¤µÍÔ½¼Ê°ËÊÔ¹æË¹½ü×¢°ì²¼ÃÅÌúÐè×ßÒéÏØ±ø¹Ì³ý°ãÒý³ÝÇ§Ê¤Ï¸Ó°¼Ã°×¸ñÐ§ÖÃÍÆ¿ÕÅäµ¶Ò¶ÂÊÊö½ñÑ¡ÑøµÂ»°²é²î°ëµÐÊ¼Æ¬Ê©ÏìÊÕ»ª¾õ±¸ÃûºìÐø¾ùÒ©±ê¼ÇÄÑ´æ²âÊ¿Éí½ôÒºÅÉ×¼½ï½Ç½µÎ¬°åÐíÆÆÊö¼¼Ïûµ×´²ÌïÊÆ¶Ë¸ÐÍùÉñ±ãºØ´å¹¹ÕÕÈÝ·Ç¸ãÑÇÄ¥×å»ð¶ÎËãÊÊ½²°´ÖµÃÀÌ¬»ÆÒ×±ë·þÔç°àÂóÏ÷ÐÅÅÅÌ¨Éù¸Ã»÷ËØÕÅÃÜº¦ºî²ÝºÎÊ÷·Ê¼ÌÓÒÊôÊÐÑÏ¾¶ÂÝ¼ì×óÒ³¿¹ËÕÏÔ¿àÓ¢¿ì³Æ»µÒÆÔ¼°Í²ÄÊ¡ºÚÎäÅàÖøºÓµÛ½öÕëÔõÖ²¾©ÖúÉýÍõÑÛËý×¥º¬Ãç¸±ÔÓÆÕÌ¸Î§Ê³ÉäÔ´ÀýÖÂËá¾ÉÈ´³ä×ã¶Ì»®¼ÁÐû»·ÂäÊ×³ß²¨³Ð·Û¼ù¸®ÓãËæ¿¼¿Ì¿¿¹»Âú·òÊ§°ü×¡´ÙÖ¦¾Ö¾ú¸ËÖÜ»¤ÑÒÊ¦¾ÙÇú´ºÔª³¬¸ºÉ°·â»»Ì«Ä£Æ¶¼õÑôÑï½­ÎöÄ¶Ä¾ÑÔÇò³¯Ò½Ð£¹ÅÄØµ¾ËÎÌýÎ¨Êä»¬Õ¾ÁíÎÀ×Ö¹Ä¸ÕÐ´ÁõÎ¢ÂÔ·¶¹©°¢¿éÄ³¹¦Ì×ÓÑÏÞÏîÓàµ¹¾í´´ÂÉÓêÈÃ¹ÇÔ¶°ï³õÆ¤²¥ÓÅÕ¼ËÀ¶¾È¦Î°¼¾Ñµ¿Ø¼¤ÕÒ½ÐÔÆ»¥¸úÁÑÁ¸Á£Ä¸Á·Èû¸Ö¶¥²ßË«ÁôÎó´¡Îü×è¹Ê´ç¶ÜÍíË¿Å®É¢º¸¹¦ÖêÇ×ÔºÀä³¹µ¯´íÉ¢ÉÌÊÓÒÕÃð°æÁÒÁãÊÒÇáÑª±¶È±Àå±Ã²ì¾ø¸»³Ç³åÅçÈÀ¼ò·ñÖùÀîÍûÅÌ´ÅÐÛËÆÀ§¹®ÒæÖÞÍÑÍ¶ËÍÅ«²àÈó¸Ç»Ó¾à´¥ÐÇËÉËÍ»ñÐË¶À¹Ù»ì¼ÍÒÀÎ´Í»¼Ü¿í¶¬ÕÂÊªÆ«ÎÆ³ÔÖ´·§¿óÕ¯ÔðÊìÎÈ¶áÓ²¼ÛÅ¬·­Ææ¼×Ô¤Ö°ÆÀ¶Á±³Ð­ËðÃÞÇÖ»ÒËäÃ¬ºñÂÞÄà±Ù¸æÂÑÏäÕÆÑõ¶÷°®Í£ÔøÈÜÓªÖÕ¸ÙÃÏÇ®´ý¾¡¶íËõÉ³ÍË³ÂÌÖ·ÜÐµÔØ°ûÓ×ÄÄ°þÆÈÐýÕ÷²Ûµ¹ÎÕµ£ÈÔÑ½ÏÊ°É¿¨´Ö½é×êÖðÈõ½ÅÅÂÑÎÄ©Òõ·áÎí¹Ú±û½ÖÀ³±´·ø³¦¸¶¼ªÉøÈð¾ª¶Ù¼·ÃëÐüÄ·ÀÃÉ­ÌÇÊ¥°¼ÌÕ´Ê³Ù²ÏÒÚ¾Ø¿µ×ñÄÁÔâ·ùÔ°Ç»¶©ÏãÈâµÜÎÝÃô»ÖÍü±àÓ¡·ä¼±ÄÃÀ©ÉË·ÉÂ¶ºËÔµÓÎÕñ²ÙÑëÎéÓòÉõÑ¸»ÔÒìÐòÃâÖ½Ò¹Ïç¾ÃÁ¥¸×¼ÐÄîÀ¼Ó³¹µÒÒÂðÈåÉ±ÆûÁ×¼è¾§²å°£È¼»¶Ìú²¹ÔÛÑ¿ÓÀÍßÇãÕóÌ¼ÑÝÍþ¸½ÑÀÑ¿ÓÀÍßÐ±¹àÅ·Ï×Ë³ÖíÑó¸¯ÇëÍ¸Ë¾Î£À¨ÂöÒËÐ¦ÈôÎ²Êø×³±©Æó²ËËë³þººÓúÂÌÍÏÅ£·ÝÈ¾¼ÈÇï±é¶ÍÓñÏÄÁÆ¼âÖ³¾®·ÑÖÝ·Ã´µÈÙÍ­ÑØÌæ¹ö¿ÍÕÙºµÎò´ÌÄÔ´ë¹á²Ø¸ÒÁîÏ¶Â¯¿ÇÁòÃºÓ­ÖýÕ³Ì½ÁÙ±¡Ñ®ÉÆ¸£×ÝÔñÀñÔ¸·ü²ÐÀ×ÑÓÑÌ¾ä´¿½¥¸ûÅÜÔóÂýÔÔÂ³³à·±¾³³±ºáµô×¶Ï£³Ø°Ü´¬¼ÙÁÁÎ½ÍÐ»ïÕÜ»³¸î°Ú¹±³Ê¾¢²ÆÒÇ³ÁÁ¶Âé×ï×æÏ¢³µ´©»õÏúÆëÊó³é»­ËÇÁú¿âÊØÖþ·¿¸èº®Ï²¸çÏ´Ê´·ÏÄÉ¸¹ºõÂ¼¾µ¸¾¶ñÖ¬×¯²ÁÏÕÔÞÖÓÒ¡µä±ú±çÖñ¹ÈÂôÂÒÐéÇÅ°Â²®¸Ï´¹Í¾¶î±ÚÍø½ØÒ°ÒÅ¾²Ä±Åª¹Ò¿ÎÕòÍýÊ¢ÄÍÔ®ÔúÂÇ¼ü¹é·ûÇì¾ÛÈÆÄ¦Ã¦ÎèÓöË÷¹Ë½ºÑòºþ¶¤ÈÊÒô¼£ËéÉìµÆ±Ü·ºÍö´ðÓÂÆµ»ÊÁø¹þ½Ò¸ÊÅµ¸ÅÏÜÅ¨µºÏ®Ë­ºéÐ»ÅÚ½½°ßÑ¶¶®Áéµ°±Õº¢ÊÍÈé¾ÞÍ½Ë½ÒøÒÁ¾°Ì¹ÀÛÔÈÃ¹¶ÅÀÖÀÕ¸ôÍä¼¨ÕÐÉÜºúºôÍ´·åÁã²ñ»ÉÎçÌø¾ÓÉÐ¶¡ÇØÉÔ×·ÁºÕÛºÄ¼îÊâ¸ÚÍÚÊÏÈÐ¾ç¶ÑºÕºÉÐØºâÇÚÄ¤ÆªµÇ×¤°¸¿¯Ñí»ºÍ¹ÒÛ¼ô´¨Ñ©Á´ÓæÀ²Á³»§Âåæß²ªÃËÂòÑî×Ú½¹ÈüÆìÂË¹èÌ¿¹É×øÕôÄý¾¹ÏÝÇ¹Àè¾ÈÃ°°µ¶´·¸Í²ÄúËÎ»¡±¬ÃýÍ¿Î¶½ò±ÛÕÏºÖÂ½°¡½¡×ð¶¹°ÎÄªµÖÉ£ÆÂ·ì¾¯ÌôÎÛ±ù¼í×ìÉ¶·¹ËÜ¼ÄÕÔº°µæµ¤¶É¶úÅÙ»¢±ÊÏ¡À¥ÀËÈø²èµÎÇ³ÓµÑ¨¸²Â×Äï¶Ö½þÐäÖé´ÆÂè×ÏÏ·Ëþ´¸ÕðËêÃ²½àÆÊÀÎ·æÒÉ°ÔÉÁÆÒÃÍËßË¢ºÝºöÔÖÄÖÇÇÌÆÂ©ÎÅÉòÈÛÂÈ»Ä¾¥ÄÐ·²ÇÀÏñ½¬ÅÔ²£ÒàÖÒ³ªÃÉÓè·×²¶ËøÓÈ³ËÎÚÖÇµ­ÔÊÅÑÐó·ýÃþÐâÉ¨±ÏÁ§±¦Ð¾Ò¯¼øÃØ¾»½¯¸Æ¼çÌÚ¿ÝÅ×¹ìÌÃ°è°ÖÑ­ÓÕ×£Àø¿Ï¾ÆÉþÇîÌÁÔïÅÝ´üÀÊÎ¹ÂÁÈíÇþ¿Å¹ßÃ³·à×ÛÇ½Ç÷±Ë½ìÄ«°­ÆôÄæÐ¶º½ÒÂËïÁäÁëÆ­ÐÝ½è', // ÖÐÎÄÑéÖ¤Âë×Ö·û´®
-        'useImgBg' => false, // Ê¹ÓÃ±³¾°Í¼Æ¬
-        'fontSize' => 25, // ÑéÖ¤Âë×ÖÌå´óÐ¡(px)
-        'useCurve' => true, // ÊÇ·ñ»­»ìÏýÇúÏß
-        'useNoise' => true, // ÊÇ·ñÌí¼ÓÔÓµã
-        'imageH'   => 0, // ÑéÖ¤ÂëÍ¼Æ¬¸ß¶È
-        'imageW'   => 0, // ÑéÖ¤ÂëÍ¼Æ¬¿í¶È
-        'length'   => 5, // ÑéÖ¤ÂëÎ»Êý
-        'fontttf'  => '', // ÑéÖ¤Âë×ÖÌå£¬²»ÉèÖÃËæ»ú»ñÈ¡
-        'bg'       => array(243, 251, 254), // ±³¾°ÑÕÉ«
-        'reset'    => true, // ÑéÖ¤³É¹¦ºóÊÇ·ñÖØÖÃ
+        'seKey'    => 'ThinkPHP.CN', // 验证码加密密钥
+        'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY', // 验证码字符集合
+        'expire'   => 1800, // 验证码过期时间（s）
+        'useZh'    => false, // 使用中文验证码
+        'zhSet'    => '们以我到他会作时要动国产的一是工就年阶义发成部民可出能方进在了不和有大这主中人上为来分生对于学下级地个用同行面说种过命度革而多子后自社加小机也经力线本电高量长党得实家定深法表着水理化争现所二起政三好十战无农使性前等反体合斗路图把结第里正新开论之物从当两些还天资事队批点育重其思与间内去因件日利相由压员气业代全组数果期导平各基或月毛然如应形想制心样干都向变关问比展那它最及外没看治提五解系林者米群头意只明四道马认次文通但条较克又公孔领军流入接席位情运器并飞原油放立题质指建区验活众很教决特此常石强极土少已根共直团统式转别造切九你取西持总料连任志观调七么山程百报更见必真保热委手改管处己将修支识病象几先老光专什六型具示复安带每东增则完风回南广劳轮科北打积车计给节做务被整联步类集号列温装即毫知轴研单色坚据速防史拉世设达尔场织历花受求传口断况采精金界品判参层止边清至万确究书术状厂须离再目海交权且儿青才证低越际八试规斯近注办布门铁需走议县兵固除般引齿千胜细影济白格效置推空配刀叶率述今选养德话查差半敌始片施响收华觉备名红续均药标记难存测士身紧液派准斤角降维板许破述技消底床田势端感往神便贺村构照容非搞亚磨族火段算适讲按值美态黄易彪服早班麦削信排台声该击素张密害侯草何树肥继右属市严径螺检左页抗苏显苦英快称坏移约巴材省黑武培著河帝仅针怎植京助升王眼她抓含苗副杂普谈围食射源例致酸旧却充足短划剂宣环落首尺波承粉践府鱼随考刻靠够满夫失包住促枝局菌杆周护岩师举曲春元超负砂封换太模贫减阳扬江析亩木言球朝医校古呢稻宋听唯输滑站另卫字鼓刚写刘微略范供阿块某功套友限项余倒卷创律雨让骨远帮初皮播优占死毒圈伟季训控激找叫云互跟裂粮粒母练塞钢顶策双留误础吸阻故寸盾晚丝女散焊功株亲院冷彻弹错散商视艺灭版烈零室轻血倍缺厘泵察绝富城冲喷壤简否柱李望盘磁雄似困巩益洲脱投送奴侧润盖挥距触星松送获兴独官混纪依未突架宽冬章湿偏纹吃执阀矿寨责熟稳夺硬价努翻奇甲预职评读背协损棉侵灰虽矛厚罗泥辟告卵箱掌氧恩爱停曾溶营终纲孟钱待尽俄缩沙退陈讨奋械载胞幼哪剥迫旋征槽倒握担仍呀鲜吧卡粗介钻逐弱脚怕盐末阴丰雾冠丙街莱贝辐肠付吉渗瑞惊顿挤秒悬姆烂森糖圣凹陶词迟蚕亿矩康遵牧遭幅园腔订香肉弟屋敏恢忘编印蜂急拿扩伤飞露核缘游振操央伍域甚迅辉异序免纸夜乡久隶缸夹念兰映沟乙吗儒杀汽磷艰晶插埃燃欢铁补咱芽永瓦倾阵碳演威附牙芽永瓦斜灌欧献顺猪洋腐请透司危括脉宜笑若尾束壮暴企菜穗楚汉愈绿拖牛份染既秋遍锻玉夏疗尖殖井费州访吹荣铜沿替滚客召旱悟刺脑措贯藏敢令隙炉壳硫煤迎铸粘探临薄旬善福纵择礼愿伏残雷延烟句纯渐耕跑泽慢栽鲁赤繁境潮横掉锥希池败船假亮谓托伙哲怀割摆贡呈劲财仪沉炼麻罪祖息车穿货销齐鼠抽画饲龙库守筑房歌寒喜哥洗蚀废纳腹乎录镜妇恶脂庄擦险赞钟摇典柄辩竹谷卖乱虚桥奥伯赶垂途额壁网截野遗静谋弄挂课镇妄盛耐援扎虑键归符庆聚绕摩忙舞遇索顾胶羊湖钉仁音迹碎伸灯避泛亡答勇频皇柳哈揭甘诺概宪浓岛袭谁洪谢炮浇斑讯懂灵蛋闭孩释乳巨徒私银伊景坦累匀霉杜乐勒隔弯绩招绍胡呼痛峰零柴簧午跳居尚丁秦稍追梁折耗碱殊岗挖氏刃剧堆赫荷胸衡勤膜篇登驻案刊秧缓凸役剪川雪链渔啦脸户洛孢勃盟买杨宗焦赛旗滤硅炭股坐蒸凝竟陷枪黎救冒暗洞犯筒您宋弧爆谬涂味津臂障褐陆啊健尊豆拔莫抵桑坡缝警挑污冰柬嘴啥饭塑寄赵喊垫丹渡耳刨虎笔稀昆浪萨茶滴浅拥穴覆伦娘吨浸袖珠雌妈紫戏塔锤震岁貌洁剖牢锋疑霸闪埔猛诉刷狠忽灾闹乔唐漏闻沈熔氯荒茎男凡抢像浆旁玻亦忠唱蒙予纷捕锁尤乘乌智淡允叛畜俘摸锈扫毕璃宝芯爷鉴秘净蒋钙肩腾枯抛轨堂拌爸循诱祝励肯酒绳穷塘燥泡袋朗喂铝软渠颗惯贸粪综墙趋彼届墨碍启逆卸航衣孙龄岭骗休借', // 中文验证码字符串
+        'useImgBg' => false, // 使用背景图片
+        'fontSize' => 25, // 验证码字体大小(px)
+        'useCurve' => true, // 是否画混淆曲线
+        'useNoise' => true, // 是否添加杂点
+        'imageH'   => 0, // 验证码图片高度
+        'imageW'   => 0, // 验证码图片宽度
+        'length'   => 5, // 验证码位数
+        'fontttf'  => '', // 验证码字体，不设置随机获取
+        'bg'       => array(243, 251, 254), // 背景颜色
+        'reset'    => true, // 验证成功后是否重置
 
-        'SESSION_AUTO_START'     => true, // ÊÇ·ñ×Ô¶¯¿ªÆôSession
-        'SESSION_OPTIONS'        => array(), // session ÅäÖÃÊý×é Ö§³Ötype name id path expire domain µÈ²ÎÊý
-        'SESSION_TYPE'           => '', // session handlerÀàÐÍ Ä¬ÈÏÎÞÐèÉèÖÃ ³ý·ÇÀ©Õ¹ÁËsession handlerÇý¶¯
-        'SESSION_PREFIX'         => '', // session Ç°×º
-        // 'VAR_SESSION_ID'      =>  'session_id',     //sessionIDµÄÌá½»±äÁ¿
+        /* SESSION设置 */
+        'SESSION_AUTO_START'     => true, // 是否自动开启Session
+        'SESSION_OPTIONS'        => array(), // session 配置数组 支持type name id path expire domain 等参数
+        'SESSION_TYPE'           => '', // session handler类型 默认无需设置 除非扩展了session handler驱动
+        'SESSION_PREFIX'         => '', // session 前缀
+        //'VAR_SESSION_ID'      =>  'session_id',     //sessionID的提交变量
     );
 
-    private $_image = null; // ÑéÖ¤ÂëÍ¼Æ¬ÊµÀý
-    private $_color = null; // ÑéÖ¤Âë×ÖÌåÑÕÉ«
-    private $_now_time = null;
+    private $_image    = null; // 验证码图片实例
+    private $_color    = null; // 验证码字体颜色
+    private $_now_time = null; // 当前时间戳
 
     /**
-     * ¼Ü¹¹·½·¨ ÉèÖÃ²ÎÊý
+     * 架构方法 设置参数
      * @access public
-     * @param  array $config ÅäÖÃ²ÎÊý
+     * @param  array $config 配置参数
      */
     public function __construct($config = array())
     {
         $this->_now_time = $_SERVER['REQUEST_TIME'];
-        $this->config    = array_merge($this->config, $config);
+        $this->config = array_merge($this->config, $config);
     }
 
     /**
-     * Ê¹ÓÃ $this->name »ñÈ¡ÅäÖÃ
+     * 使用 $this->name 获取配置
      * @access public
-     * @param  string $name ÅäÖÃÃû³Æ
-     * @return multitype    ÅäÖÃÖµ
+     * @param  string $name 配置名称
+     * @return multitype    配置值
      */
     public function __get($name)
     {
@@ -59,10 +60,10 @@ class Verify
     }
 
     /**
-     * ÉèÖÃÑéÖ¤ÂëÅäÖÃ
+     * 设置验证码配置
      * @access public
-     * @param  string $name ÅäÖÃÃû³Æ
-     * @param  string $value ÅäÖÃÖµ
+     * @param  string $name 配置名称
+     * @param  string $value 配置值
      * @return void
      */
     public function __set($name, $value)
@@ -73,9 +74,9 @@ class Verify
     }
 
     /**
-     * ¼ì²éÅäÖÃ
+     * 检查配置
      * @access public
-     * @param  string $name ÅäÖÃÃû³Æ
+     * @param  string $name 配置名称
      * @return bool
      */
     public function __isset($name)
@@ -84,21 +85,21 @@ class Verify
     }
 
     /**
-     * ÑéÖ¤ÑéÖ¤ÂëÊÇ·ñÕýÈ·
+     * 验证验证码是否正确
      * @access public
-     * @param string $code ÓÃ»§ÑéÖ¤Âë
-     * @param string $id ÑéÖ¤Âë±êÊ¶
-     * @return bool ÓÃ»§ÑéÖ¤ÂëÊÇ·ñÕýÈ·
+     * @param string $code 用户验证码
+     * @param string $id 验证码标识
+     * @return bool 用户验证码是否正确
      */
     public function check($code, $id = '')
     {
         $key = $this->authcode($this->seKey) . $id;
-        // ÑéÖ¤Âë²»ÄÜÎª¿Õ
+        // 验证码不能为空
         $secode = $this->session($key);
         if (empty($code) || empty($secode)) {
             return false;
         }
-        // session ¹ýÆÚ
+        // session 过期
         if ($this->_now_time - $secode['verify_time'] > $this->expire) {
             $this->session($key, null);
             return false;
@@ -113,26 +114,26 @@ class Verify
     }
 
     /**
-     * Êä³öÑéÖ¤Âë²¢°ÑÑéÖ¤ÂëµÄÖµ±£´æµÄsessionÖÐ
-     * ÑéÖ¤Âë±£´æµ½sessionµÄ¸ñÊ½Îª£º array('verify_code' => 'ÑéÖ¤ÂëÖµ', 'verify_time' => 'ÑéÖ¤Âë´´½¨Ê±¼ä');
+     * 输出验证码并把验证码的值保存的session中
+     * 验证码保存到session的格式为： array('verify_code' => '验证码值', 'verify_time' => '验证码创建时间');
      * @access public
-     * @param string $id ÒªÉú³ÉÑéÖ¤ÂëµÄ±êÊ¶
+     * @param string $id 要生成验证码的标识
      * @return void
      */
     public function entry($id = '')
     {
-        // Í¼Æ¬¿í(px)
+        // 图片宽(px)
         $this->imageW || $this->imageW = $this->length * $this->fontSize * 1.5 + $this->length * $this->fontSize / 2;
-        // Í¼Æ¬¸ß(px)
+        // 图片高(px)
         $this->imageH || $this->imageH = $this->fontSize * 2.5;
-        // ½¨Á¢Ò»·ù $this->imageW x $this->imageH µÄÍ¼Ïñ
+        // 建立一幅 $this->imageW x $this->imageH 的图像
         $this->_image = imagecreate($this->imageW, $this->imageH);
-        // ÉèÖÃ±³¾°
+        // 设置背景
         imagecolorallocate($this->_image, $this->bg[0], $this->bg[1], $this->bg[2]);
 
-        // ÑéÖ¤Âë×ÖÌåËæ»úÑÕÉ«
+        // 验证码字体随机颜色
         $this->_color = imagecolorallocate($this->_image, mt_rand(1, 150), mt_rand(1, 150), mt_rand(1, 150));
-        // ÑéÖ¤ÂëÊ¹ÓÃËæ»ú×ÖÌå
+        // 验证码使用随机字体
         $ttfPath = dirname(__FILE__) . '/Verify/' . ($this->useZh ? 'zhttfs' : 'ttfs') . '/';
 
         if (empty($this->fontttf)) {
@@ -153,19 +154,19 @@ class Verify
         }
 
         if ($this->useNoise) {
-            // »æÔÓµã
+            // 绘杂点
             $this->_writeNoise();
         }
         if ($this->useCurve) {
-            // »æ¸ÉÈÅÏß
+            // 绘干扰线
             $this->_writeCurve();
         }
 
-        // »æÑéÖ¤Âë
-        $code   = array(); // ÑéÖ¤Âë
-        $codeNX = 0; // ÑéÖ¤ÂëµÚN¸ö×Ö·ûµÄ×ó±ß¾à
+        // 绘验证码
+        $code   = array(); // 验证码
+        $codeNX = 0; // 验证码第N个字符的左边距
         if ($this->useZh) {
-            // ÖÐÎÄÑéÖ¤Âë
+            // 中文验证码
             for ($i = 0; $i < $this->length; $i++) {
                 $code[$i] = iconv_substr($this->zhSet, floor(mt_rand(0, mb_strlen($this->zhSet, 'utf-8') - 1)), 1, 'utf-8');
                 imagettftext($this->_image, $this->fontSize, mt_rand(-40, 40), $this->fontSize * ($i + 1) * 1.5, $this->fontSize + mt_rand(10, 20), $this->_color, $this->fontttf, $code[$i]);
@@ -178,13 +179,12 @@ class Verify
             }
         }
 
-        // ±£´æÑéÖ¤Âë
+        // 保存验证码
         $key                   = $this->authcode($this->seKey);
         $code                  = $this->authcode(strtoupper(implode('', $code)));
         $secode                = array();
-        $secode['verify_code'] = $code; // °ÑÐ£ÑéÂë±£´æµ½session
-        $secode['verify_time'] = $this->_now_time; // ÑéÖ¤Âë´´½¨Ê±¼ä
-
+        $secode['verify_code'] = $code; // 把校验码保存到session
+        $secode['verify_time'] = $this->_now_time; // 验证码创建时间
         $this->session($key . $id, $secode);
 
         header('Cache-Control: private, max-age=0, no-store, no-cache, must-revalidate');
@@ -192,52 +192,52 @@ class Verify
         header('Pragma: no-cache');
         header("content-type: image/png");
 
-        // Êä³öÍ¼Ïñ
+        // 输出图像
         imagepng($this->_image);
         imagedestroy($this->_image);
     }
 
     /**
-     * »­Ò»ÌõÓÉÁ½ÌõÁ¬ÔÚÒ»Æð¹¹³ÉµÄËæ»úÕýÏÒº¯ÊýÇúÏß×÷¸ÉÈÅÏß(Äã¿ÉÒÔ¸Ä³É¸üË§µÄÇúÏßº¯Êý)
+     * 画一条由两条连在一起构成的随机正弦函数曲线作干扰线(你可以改成更帅的曲线函数)
      *
-     *      ¸ßÖÐµÄÊýÑ§¹«Ê½Õ¦¶¼ÍüÁËÄù£¬Ð´³öÀ´
-     *        ÕýÏÒÐÍº¯Êý½âÎöÊ½£ºy=Asin(¦Øx+¦Õ)+b
-     *      ¸÷³£ÊýÖµ¶Ôº¯ÊýÍ¼ÏñµÄÓ°Ïì£º
-     *        A£º¾ö¶¨·åÖµ£¨¼´×ÝÏòÀ­ÉìÑ¹ËõµÄ±¶Êý£©
-     *        b£º±íÊ¾²¨ÐÎÔÚYÖáµÄÎ»ÖÃ¹ØÏµ»ò×ÝÏòÒÆ¶¯¾àÀë£¨ÉÏ¼ÓÏÂ¼õ£©
-     *        ¦Õ£º¾ö¶¨²¨ÐÎÓëXÖáÎ»ÖÃ¹ØÏµ»òºáÏòÒÆ¶¯¾àÀë£¨×ó¼ÓÓÒ¼õ£©
-     *        ¦Ø£º¾ö¶¨ÖÜÆÚ£¨×îÐ¡ÕýÖÜÆÚT=2¦Ð/¨O¦Ø¨O£©
+     *      高中的数学公式咋都忘了涅，写出来
+     *        正弦型函数解析式：y=Asin(ωx+φ)+b
+     *      各常数值对函数图像的影响：
+     *        A：决定峰值（即纵向拉伸压缩的倍数）
+     *        b：表示波形在Y轴的位置关系或纵向移动距离（上加下减）
+     *        φ：决定波形与X轴位置关系或横向移动距离（左加右减）
+     *        ω：决定周期（最小正周期T=2π/∣ω∣）
      *
      */
     private function _writeCurve()
     {
         $px = $py = 0;
 
-        // ÇúÏßÇ°²¿·Ö
-        $A = mt_rand(1, $this->imageH / 2); // Õñ·ù
-        $b = mt_rand(-$this->imageH / 4, $this->imageH / 4); // YÖá·½ÏòÆ«ÒÆÁ¿
-        $f = mt_rand(-$this->imageH / 4, $this->imageH / 4); // XÖá·½ÏòÆ«ÒÆÁ¿
-        $T = mt_rand($this->imageH, $this->imageW * 2); // ÖÜÆÚ
+        // 曲线前部分
+        $A = mt_rand(1, $this->imageH / 2); // 振幅
+        $b = mt_rand(-$this->imageH / 4, $this->imageH / 4); // Y轴方向偏移量
+        $f = mt_rand(-$this->imageH / 4, $this->imageH / 4); // X轴方向偏移量
+        $T = mt_rand($this->imageH, $this->imageW * 2); // 周期
         $w = (2 * M_PI) / $T;
 
-        $px1 = 0; // ÇúÏßºá×ø±êÆðÊ¼Î»ÖÃ
-        $px2 = mt_rand($this->imageW / 2, $this->imageW * 0.8); // ÇúÏßºá×ø±ê½áÊøÎ»ÖÃ
+        $px1 = 0; // 曲线横坐标起始位置
+        $px2 = mt_rand($this->imageW / 2, $this->imageW * 0.8); // 曲线横坐标结束位置
 
         for ($px = $px1; $px <= $px2; $px = $px + 1) {
             if (0 != $w) {
-                $py = $A * sin($w * $px + $f) + $b + $this->imageH / 2; // y = Asin(¦Øx+¦Õ) + b
+                $py = $A * sin($w * $px + $f) + $b + $this->imageH / 2; // y = Asin(ωx+φ) + b
                 $i  = (int) ($this->fontSize / 5);
                 while ($i > 0) {
-                    imagesetpixel($this->_image, $px + $i, $py + $i, $this->_color); // ÕâÀï(while)Ñ­»·»­ÏñËØµã±ÈimagettftextºÍimagestringÓÃ×ÖÌå´óÐ¡Ò»´Î»­³ö£¨²»ÓÃÕâwhileÑ­»·£©ÐÔÄÜÒªºÃºÜ¶à
+                    imagesetpixel($this->_image, $px + $i, $py + $i, $this->_color); // 这里(while)循环画像素点比imagettftext和imagestring用字体大小一次画出（不用这while循环）性能要好很多
                     $i--;
                 }
             }
         }
 
-        // ÇúÏßºó²¿·Ö
-        $A   = mt_rand(1, $this->imageH / 2); // Õñ·ù
-        $f   = mt_rand(-$this->imageH / 4, $this->imageH / 4); // XÖá·½ÏòÆ«ÒÆÁ¿
-        $T   = mt_rand($this->imageH, $this->imageW * 2); // ÖÜÆÚ
+        // 曲线后部分
+        $A   = mt_rand(1, $this->imageH / 2); // 振幅
+        $f   = mt_rand(-$this->imageH / 4, $this->imageH / 4); // X轴方向偏移量
+        $T   = mt_rand($this->imageH, $this->imageW * 2); // 周期
         $w   = (2 * M_PI) / $T;
         $b   = $py - $A * sin($w * $px + $f) - $this->imageH / 2;
         $px1 = $px2;
@@ -245,7 +245,7 @@ class Verify
 
         for ($px = $px1; $px <= $px2; $px = $px + 1) {
             if (0 != $w) {
-                $py = $A * sin($w * $px + $f) + $b + $this->imageH / 2; // y = Asin(¦Øx+¦Õ) + b
+                $py = $A * sin($w * $px + $f) + $b + $this->imageH / 2; // y = Asin(ωx+φ) + b
                 $i  = (int) ($this->fontSize / 5);
                 while ($i > 0) {
                     imagesetpixel($this->_image, $px + $i, $py + $i, $this->_color);
@@ -256,25 +256,25 @@ class Verify
     }
 
     /**
-     * »­ÔÓµã
-     * ÍùÍ¼Æ¬ÉÏÐ´²»Í¬ÑÕÉ«µÄ×ÖÄ¸»òÊý×Ö
+     * 画杂点
+     * 往图片上写不同颜色的字母或数字
      */
     private function _writeNoise()
     {
         $codeSet = '2345678abcdefhijkmnpqrstuvwxyz';
         for ($i = 0; $i < 10; $i++) {
-            //ÔÓµãÑÕÉ«
+            //杂点颜色
             $noiseColor = imagecolorallocate($this->_image, mt_rand(150, 225), mt_rand(150, 225), mt_rand(150, 225));
             for ($j = 0; $j < 5; $j++) {
-                // »æÔÓµã
+                // 绘杂点
                 imagestring($this->_image, 5, mt_rand(-10, $this->imageW), mt_rand(-10, $this->imageH), $codeSet[mt_rand(0, 29)], $noiseColor);
             }
         }
     }
 
     /**
-     * »æÖÆ±³¾°Í¼Æ¬
-     * ×¢£ºÈç¹ûÑéÖ¤ÂëÊä³öÍ¼Æ¬±È½Ï´ó£¬½«Õ¼ÓÃ±È½Ï¶àµÄÏµÍ³×ÊÔ´
+     * 绘制背景图片
+     * 注：如果验证码输出图片比较大，将占用比较多的系统资源
      */
     private function _background()
     {
@@ -298,7 +298,7 @@ class Verify
         @imagedestroy($bgImage);
     }
 
-    /* ¼ÓÃÜÑéÖ¤Âë */
+    /* 加密验证码 */
     private function authcode($str)
     {
         $key = substr(md5($this->seKey), 5, 8);
@@ -306,48 +306,43 @@ class Verify
         return md5($key . $str);
     }
 
-
     /**
-     * session¹ÜÀíº¯Êý
-     * @param string|array $name sessionÃû³Æ Èç¹ûÎªÊý×éÔò±íÊ¾½øÐÐsessionÉèÖÃ
-     * @param mixed $value sessionÖµ
+     * session管理函数
+     * @param string|array $name session名称 如果为数组则表示进行session设置
+     * @param mixed $value session值
      * @return mixed
      */
     public function session($name = '', $value = '')
     {
-        // Æô¶¯session
+        // 启动session
         if ($this->config['SESSION_AUTO_START']) {
             session_start();
         }
 
         $prefix = $this->config['SESSION_PREFIX'];
         if (is_array($name)) {
-            // session³õÊ¼»¯ ÔÚsession_start Ö®Ç°µ÷ÓÃ
+            // session初始化 在session_start 之前调用
             if (isset($name['prefix'])) {
                 $this->config['SESSION_PREFIX'] = $name['prefix'];
             }
-
-            if ($this->config['VAR_SESSION_ID'] && isset( $_REQUEST[$this->config['VAR_SESSION_ID']])) {  
+            if ($this->config['VAR_SESSION_ID'] && isset($_REQUEST[$this->config['VAR_SESSION_ID']])) {
                 session_id($_REQUEST[$this->config['VAR_SESSION_ID']]);
             } elseif (isset($name['id'])) {
                 session_id($name['id']);
             }
             if ('common' == APP_MODE) {
-                // ÆäËüÄ£Ê½¿ÉÄÜ²»Ö§³Ö
+                // 其它模式可能不支持
                 ini_set('session.auto_start', 0);
             }
             if (isset($name['name'])) {
                 session_name($name['name']);
             }
-
             if (isset($name['path'])) {
                 session_save_path($name['path']);
             }
-
             if (isset($name['domain'])) {
                 ini_set('session.cookie_domain', $name['domain']);
             }
-
             if (isset($name['expire'])) {
                 ini_set('session.gc_maxlifetime', $name['expire']);
                 ini_set('session.cookie_lifetime', $name['expire']);
@@ -355,25 +350,20 @@ class Verify
             if (isset($name['use_trans_sid'])) {
                 ini_set('session.use_trans_sid', $name['use_trans_sid'] ? 1 : 0);
             }
-
             if (isset($name['use_cookies'])) {
                 ini_set('session.use_cookies', $name['use_cookies'] ? 1 : 0);
             }
-
             if (isset($name['cache_limiter'])) {
                 session_cache_limiter($name['cache_limiter']);
             }
-
             if (isset($name['cache_expire'])) {
                 session_cache_expire($name['cache_expire']);
             }
-
             if (isset($name['type'])) {
                 $this->config['SESSION_TYPE'] = $name['type'];
             }
-
             if ($this->config['SESSION_TYPE']) {
-                // ¶ÁÈ¡sessionÇý¶¯
+                // 读取session驱动
                 $type   = $this->config['SESSION_TYPE'];
                 $class  = strpos($type, '\\') ? $type : 'Think\\Session\\Driver\\' . ucwords(strtolower($type));
                 $hander = new $class();
@@ -385,51 +375,51 @@ class Verify
                     array(&$hander, "destroy"),
                     array(&$hander, "gc"));
             }
-            // Æô¶¯session
+
+            // 启动session
             if ($this->config['SESSION_AUTO_START']) {
                 session_start();
             }
-
         } elseif ('' === $value) {
             if ('' === $name) {
-                // »ñÈ¡È«²¿µÄsession
+                // 获取全部的session
                 return $prefix ? $_SESSION[$prefix] : $_SESSION;
             } elseif (0 === strpos($name, '[')) {
-                // session ²Ù×÷
+                // session 操作
                 if ('[pause]' == $name) {
-                    // ÔÝÍ£session
+                    // 暂停session
                     session_write_close();
                 } elseif ('[start]' == $name) {
-                    // Æô¶¯session
+                    // 启动session
                     session_start();
                 } elseif ('[destroy]' == $name) {
-                    // Ïú»Ùsession
+                    // 销毁session
                     $_SESSION = array();
                     session_unset();
                     session_destroy();
                 } elseif ('[regenerate]' == $name) {
-                    // ÖØÐÂÉú³Éid
+                    // 重新生成id
                     session_regenerate_id();
                 }
             } elseif (0 === strpos($name, '?')) {
-                // ¼ì²ésession
+                // 检查session
                 $name = substr($name, 1);
                 if (strpos($name, '.')) {
-                    // Ö§³ÖÊý×é
+                    // 支持数组
                     list($name1, $name2) = explode('.', $name);
                     return $prefix ? isset($_SESSION[$prefix][$name1][$name2]) : isset($_SESSION[$name1][$name2]);
                 } else {
                     return $prefix ? isset($_SESSION[$prefix][$name]) : isset($_SESSION[$name]);
                 }
             } elseif (is_null($name)) {
-                // Çå¿Õsession
+                // 清空session
                 if ($prefix) {
                     unset($_SESSION[$prefix]);
                 } else {
                     $_SESSION = array();
                 }
             } elseif ($prefix) {
-                // »ñÈ¡session
+                // 获取session
                 if (strpos($name, '.')) {
                     list($name1, $name2) = explode('.', $name);
                     return isset($_SESSION[$prefix][$name1][$name2]) ? $_SESSION[$prefix][$name1][$name2] : null;
@@ -445,7 +435,7 @@ class Verify
                 }
             }
         } elseif (is_null($value)) {
-            // É¾³ýsession
+            // 删除session
             if (strpos($name, '.')) {
                 list($name1, $name2) = explode('.', $name);
                 if ($prefix) {
@@ -461,7 +451,7 @@ class Verify
                 }
             }
         } else {
-            // ÉèÖÃsession
+            // 设置session
             if (strpos($name, '.')) {
                 list($name1, $name2) = explode('.', $name);
                 if ($prefix) {
