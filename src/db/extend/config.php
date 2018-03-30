@@ -18,9 +18,12 @@ return  array(
     'DB_MASTER_NUM'   =>  1,           // 读写分离后 主服务器数量
     'DB_SLAVE_NO'     =>  '',          // 指定从服务器序号
 
-    'DB_DEBUG'        =>  false,       // 数据库调试模式 开启后可以记录SQL日志 抛出异常
-    'TRACE_DEBUG'     =>  true,        // 是否统计内存
+    'DB_DEBUG'        =>  true,       // 数据库调试模式 开启后可以记录SQL日志 抛出异常
+    'TRACE_DEBUG'     =>  true,       // 是否统计内存
     'MEMORY_LIMIT_ON' =>  false,       // 是否统计内存
+
+    'VAR_PAGE'        =>  'p',
+
 );
 
 /**
