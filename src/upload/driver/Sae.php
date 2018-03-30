@@ -1,15 +1,9 @@
 <?php
 // +----------------------------------------------------------------------
-// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
+// | Author: 琯琯 <yzmguanguan@gmail.com>
 // +----------------------------------------------------------------------
-// | Copyright (c) 2006-2014 http://thinkphp.cn All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
-// | Author: luofei614<weibo.com/luofei614>
-// +----------------------------------------------------------------------
+namespace guanguans\library\upload\driver;
 
-namespace Think\Upload\Driver;
 class Sae{
     /**
      * Storage的Domain

@@ -1,14 +1,12 @@
 <?php
 // +----------------------------------------------------------------------
-// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
+// | IP 地理位置查询类 修改自 CoolCode.CN
+// | 由于使用UTF8编码 如果使用纯真IP地址库的话 需要对返回结果进行编码转换
 // +----------------------------------------------------------------------
-// | Copyright (c) 2006-2014 http://thinkphp.cn All rights reserved.
+// | Author: 琯琯 <yzmguanguan@gmail.com>
 // +----------------------------------------------------------------------
-// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
-// | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://www.zjzit.cn>
-// +----------------------------------------------------------------------
-namespace Think;
+namespace guanguans\library\upload;
+
 class Upload {
     /**
      * 默认上传配置
@@ -258,12 +256,23 @@ class Upload {
      * @param array $config 驱动配置     
      */
     private function setDriver($driver = null, $config = null){
-        $driver = $driver ? : ($this->driver       ? : C('FILE_UPLOAD_TYPE'));
-        $config = $config ? : ($this->driverConfig ? : C('UPLOAD_TYPE_CONFIG'));
-        $class = strpos($driver,'\\')? $driver : 'Think\\Upload\\Driver\\'.ucfirst(strtolower($driver));
+        // $driver = $driver ? : ($this->driver       ? : C('FILE_UPLOAD_TYPE'));
+        // $config = $config ? : ($this->driverConfig ? : C('UPLOAD_TYPE_CONFIG'));
+        $driver = ucfirst(strtolower($driver));
+        if (empty($driver)) {
+            $driver = 'Local';
+        }
+        if (!in_array($driver, ['Aliyun', 'Bcs', 'Ftp', 'Local', 'Qiniu', 'Sae', 'Upyun'])) {
+            exit("不存在上传驱动：{$driver}");
+        }
+        if ($driver != 'Local' && empty($config)) {
+            exit("不存在{$driver}驱动配置：driverConfig");
+        }
+
+        $class = strpos($driver,'\\')? $driver : 'guanguans\\library\\upload\\driver\\'.ucfirst(strtolower($driver));
         $this->uploader = new $class($config);
         if(!$this->uploader){
-            E("不存在上传驱动：{$name}");
+            exit("不存在上传驱动：{$driver}");
         }
     }
 

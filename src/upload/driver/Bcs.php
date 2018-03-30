@@ -1,15 +1,11 @@
 <?php
 // +----------------------------------------------------------------------
-// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
+// | Author: 琯琯 <yzmguanguan@gmail.com>
 // +----------------------------------------------------------------------
-// | Copyright (c) 2006-2014 http://thinkphp.cn All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
-// | Author: Jay <yangweijiester@gmail.com> <http://code-tech.diandian.com>
-// +----------------------------------------------------------------------
-namespace Think\Upload\Driver;
-use Think\Upload\Driver\Bcs\BaiduBcs;
+namespace guanguans\library\upload\driver;
+
+use guanguans\library\upload\driver\bcs\BaiduBcs;
+
 class Bcs {
     /**
      * 上传文件根目录

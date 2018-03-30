@@ -1,5 +1,9 @@
 <?php
-namespace Think\Upload\Driver\Bcs;
+// +----------------------------------------------------------------------
+// | Author: 琯琯 <yzmguanguan@gmail.com>
+// +----------------------------------------------------------------------
+namespace guanguans\library\upload\driver\bcs;
+
 class BCS_MimeTypes {
 	public static $mime_types = array (
 			'3gp' => 'video/3gpp', 'ai' => 'application/postscript',

@@ -1,16 +1,10 @@
 <?php
 // +----------------------------------------------------------------------
-// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
+// | Author: 琯琯 <yzmguanguan@gmail.com>
 // +----------------------------------------------------------------------
-// | Copyright (c) 2006-2014 http://thinkphp.cn All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
-// | Author: yangweijie <yangweijiester@gmail.com> <http://www.code-tech.diandian.com>
-// +----------------------------------------------------------------------
+namespace guanguans\library\upload\driver;
 
-namespace Think\Upload\Driver;
-use Think\Upload\Driver\Qiniu\QiniuStorage;
+use guanguans\library\upload\driver\qiniu\QiniuStorage;
 
 class Qiniu{
     /**

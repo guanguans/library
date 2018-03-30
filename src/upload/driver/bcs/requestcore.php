@@ -1,5 +1,8 @@
 <?php
-namespace Think\Upload\Driver\Bcs;
+// +----------------------------------------------------------------------
+// | Author: 琯琯 <yzmguanguan@gmail.com>
+// +----------------------------------------------------------------------
+namespace guanguans\library\upload\driver\bcs;
 
 /**
  * Handles all HTTP requests using cURL and manages the responses.

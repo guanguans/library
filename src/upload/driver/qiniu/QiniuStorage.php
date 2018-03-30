@@ -1,5 +1,8 @@
 <?php
-namespace Think\Upload\Driver\Qiniu;
+// +----------------------------------------------------------------------
+// | Author: 琯琯 <yzmguanguan@gmail.com>
+// +----------------------------------------------------------------------
+namespace guanguans\library\upload\driver\qiniu;
 
 class QiniuStorage {
 

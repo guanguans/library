@@ -1,5 +1,9 @@
 <?php
-namespace Think\Upload\Driver;
+// +----------------------------------------------------------------------
+// | Author: 琯琯 <yzmguanguan@gmail.com>
+// +----------------------------------------------------------------------
+namespace guanguans\library\upload\driver;
+
 use \Aliyun\OSS\OSSClient;
 /**
  * 

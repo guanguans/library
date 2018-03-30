@@ -1,8 +1,13 @@
 <?php
-namespace Think\Upload\Driver\Bcs;
-use Think\Upload\Driver\Bcs\BCS_MimeTypes;
-use Think\Upload\Driver\Bcs\BCS_RequestCore;
-use Think\Upload\Driver\Bcs\BCS_ResponseCore;
+// +----------------------------------------------------------------------
+// | Author: 琯琯 <yzmguanguan@gmail.com>
+// +----------------------------------------------------------------------
+namespace guanguans\library\upload\driver\bcs;
+
+
+use guanguans\library\upload\driver\bcs\BCS_MimeTypes;
+use guanguans\library\upload\driver\bcs\BCS_RequestCore;
+use guanguans\library\upload\driver\bcs\BCS_ResponseCore;
 
 if (! defined ( 'BCS_API_PATH' )) {
 	define ( 'BCS_API_PATH', dirname ( __FILE__ ) );
@@ -17,8 +22,8 @@ define ( 'BCS_SUPERFILE_POSTFIX', '_bcs_superfile_' );
 //sdk superfile分片大小 ，单位 B（字节）
 define ( 'BCS_SUPERFILE_SLICE_SIZE', 1024 * 1024 );
 
-require_once (BCS_API_PATH . '/requestcore.class.php');
-require_once (BCS_API_PATH . '/mimetypes.class.php');
+require_once (BCS_API_PATH . '/requestcore.php');
+require_once (BCS_API_PATH . '/mimetypes.php');
 /**
  * Default BCS Exception.
  */

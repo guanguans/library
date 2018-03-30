@@ -1,15 +1,9 @@
 <?php
 // +----------------------------------------------------------------------
-// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
+// | Author: 琯琯 <yzmguanguan@gmail.com>
 // +----------------------------------------------------------------------
-// | Copyright (c) 2006-2014 http://thinkphp.cn All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
-// | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://www.zjzit.cn>
-// +----------------------------------------------------------------------
+namespace guanguans\library\upload\driver;
 
-namespace Think\Upload\Driver;
 class Ftp {
     /**
      * 上传文件根目录
@@ -47,7 +41,7 @@ class Ftp {
 
         /* 登录FTP服务器 */
         if(!$this->login()){
-            E($this->error);
+            exit($this->error);
         }
     }
 
