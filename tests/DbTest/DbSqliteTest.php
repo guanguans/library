@@ -6,7 +6,8 @@ require_once '../../src/db/extend/functions.php';
 use guanguans\library\db\Driver;
 
 error_reporting(E_ERROR);
-$User = M('ciauthor', '', 'sqlite://root:root@localhost:3306/./ci.db#utf8');
+// $User = M('ciauthor', '', 'sqlite://root:root@localhost:3306/./ci.db#utf8');
+$User = M('php_manual', '', 'sqlite://root:root@localhost:3306/./php_manual.sqlite#utf8');
 // $User = M('ciauthor');
 var_dump($User->select());
 
