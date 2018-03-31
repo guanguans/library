@@ -1,6 +1,6 @@
 <?php
 
-require_once '../vendor/autoload.php';
+require_once '../../vendor/autoload.php';
 
 use guanguans\library\UploadFile;
 
@@ -14,9 +14,6 @@ $upload->autoSub       = true;           // 上传子目录开启
 $upload->subType       = 'date';         // 上传子目录命名规则
 $upload->allowExts     = ['jpg', 'png']; // 允许类型
 
-if (empty($_FILES)) {
-	exit('文件不存在！');
-}
 if ($upload->upload()) {
     var_dump($upload->getUploadFileInfo());
 } else {
