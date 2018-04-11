@@ -22,10 +22,10 @@ use guanguans\library\db\Driver;
 
 $User = M('User');
 // 查询
-var_dump($User->where(['user_name'=>'琯琯'])->select());
+$User->where(['user_name'=>'琯琯'])->select();
 ```
 
-[更多......](./docs/db.md)
+[更多......](https://www.kancloud.cn/manual/thinkphp/1734)
 
 ### Env
 
@@ -38,9 +38,9 @@ $envFile = 'xxx/.env';
 $Env = new Env($envFile);
 
 // 获取配置 APP_NAME
-var_dump($Env->get('APP_NAME'));
+$Env->get('APP_NAME');
 // 设置配置 APP_TEST
-var_dump($Env->set('APP_TEST', 'this is a test.'));
+$Env->set('APP_TEST', 'this is a test.');
 ```
 
 ### UploadFile
@@ -67,16 +67,16 @@ use guanguans\library\UploadFile;
 
 $upload = new UploadFile();
 
-$upload->savePath      = './upload/';    // 上传根目录
-$upload->saveRule      = 'uniqid/';      // 上传文件的文件名保存规则
-$upload->autoSub       = true;           // 上传子目录开启
-$upload->subType       = 'date';         // 上传子目录命名规则
-$upload->allowExts     = ['jpg', 'png']; // 允许类型
+$UploadFile->savePath      = './upload/';    // 上传根目录
+$UploadFile->saveRule      = 'uniqid/';      // 上传文件的文件名保存规则
+$UploadFile->autoSub       = true;           // 上传子目录开启
+$UploadFile->subType       = 'date';         // 上传子目录命名规则
+$UploadFile->allowExts     = ['jpg', 'png']; // 允许类型
 
-if ($upload->upload()) {
-    var_dump($upload->getUploadFileInfo());
+if ($UploadFile->upload()) {
+    $UploadFile->getUploadFileInfo();
 } else {
-    var_dump($upload->getErrorMsg());
+    $UploadFile->getErrorMsg();
 }
 ```
 
@@ -111,13 +111,13 @@ $config = [
 	'subName'  => array('date','Ymd'),
 ];
 
-$upload = new Upload($config);
-$info = $upload->upload();
+$Upload = new Upload($config);
+$info = $Upload->upload();
 
 if ($info) {
-	var_dump($info);
+	$info;
 } else {
-    var_dump($upload->getError());
+    $upload->getError();
 }
 ```
 
@@ -145,8 +145,8 @@ $Verify->entry();
 <?php
 use guanguans\library\verify\Verify;
 
-$verify = new Verify();
-var_dump($verify->check($_POST['VerifyCode']));
+$Verify = new Verify();
+$Verify->check($_POST['VerifyCode']);
 ```
 
 ### CodeSwitch
@@ -269,6 +269,134 @@ $Http->fsockopenDownload($filename, $showname, $content, $$expire);
 $Http->getHeaderInfo('./HttpTest.php');
 ```
 
+### Image
+
+``` php
+<?php
+use guanguans\library\image\Image;
+use guanguans\library\image\driver\GIF;
+
+$Image = new Image(1);
+
+// 打开要操作的图片
+$Image->open('./xxx.png');
+// 将图片裁剪为400x400并保存为corp.jpg
+$Image->thumb(150, 150)->save('./thumb.jpg');
+```
+
+[更多......](https://www.kancloud.cn/manual/thinkphp/1878)
+
+### IpLocation
+
+``` php
+<?php
+use guanguans\library\ipLocation\IpLocation;
+
+// 实例化类 参数表示IP地址库文件
+$IpLocation = new IpLocation('QQwry-gbk.dat');
+
+header("Content-type: text/html; charset=gbk");
+// 获取某个IP地址所在的位置
+$IpLocation->getlocation('61.135.169.125');
+```
+
+### PHPZip
+
+
+``` php
+<?php
+use guanguans\library\PHPZip;
+
+$PHPZip = new PHPZip();
+
+// 遍历指定文件夹
+$PHPZip->visitFile('../tests');
+// 压缩并直接下载
+$PHPZip->ZipAndDownload('../tests');
+// 压缩到服务器
+$PHPZip->Zip('../tests', 'tests.zip');
+// 解压文件
+$PHPZip->unZip('./tests.zip', '../PHPZip');
+// 获取被压缩文件的信息
+$PHPZip->GetZipInnerFilesInfo('./tests.zip');
+// 获取压缩文件的注释
+$PHPZip->GetZipComment('./tests.zip');
+```
+
+### PinYin
+
+``` php
+<?php
+use guanguans\library\PinYin;
+
+$PinYin = new PinYin();
+
+$PinYin->getAllPY('PHP 是最好的语言');
+$PinYin->getFirstPY('PHP 是最好的语言');
+```
+
+### Storage
+
+``` php
+<?php
+use guanguans\library\storage\Storage;
+
+Storage::connect('file');
+Storage::put('test.text','testtesttesttesttest','F');
+Storage::unlink('test.text','F');
+```
+
+### String
+
+``` php
+<?php
+use guanguans\library\String;
+
+$String = new String();
+
+$String->uuid();
+$String->randString();
+```
+
+### Tree
+
+``` php
+use guanguans\library\Tree;
+
+$data     = [
+    ['id'=>1, 'parent_id'=>0, 'name'=>'Java', 'url'=>'url1'],
+    ['id'=>2, 'parent_id'=>0, 'name'=>'PHP', 'url'=>'url2'],
+    ['id'=>3, 'parent_id'=>0, 'name'=>'python', 'url'=>'url3'],
+    ['id'=>4, 'parent_id'=>2, 'name'=>'ThinkPHP', 'url'=>'url4'],
+    ['id'=>5, 'parent_id'=>2, 'name'=>'Laravel', 'url'=>'url5'],
+    ['id'=>6, 'parent_id'=>2, 'name'=>'Yii2', 'url'=>'url6'],
+    ['id'=>7, 'parent_id'=>4, 'name'=>'ThinkPHP 是一个 PHP 框架', 'url'=>'url7'],
+    ['id'=>8, 'parent_id'=>4, 'name'=>'ThinkPHP 中集成 guanguans/library', 'url'=>'url8'],
+    ['id'=>9, 'parent_id'=>5, 'name'=>'Laravel 是一个 PHP 框架', 'url'=>'url9']
+];
+
+$Tree       = new Tree();
+$Tree->icon = ['&nbsp;&nbsp;&nbsp;│ ', '&nbsp;&nbsp;&nbsp;├─ ', '&nbsp;&nbsp;&nbsp;└─ '];
+$Tree->nbsp = '&nbsp;&nbsp;&nbsp;';
+
+foreach ($data as $key => $value) {
+    $data[$key]['post_name'] = '<a href="' .$value['url']. '">'.$value['name'].'</a>';
+    $data[$key]['parentid'] = $value['parent_id'];
+}
+
+$Tree->init($data);
+$str  = "<tr>
+            <td>\$id</td>
+            <td>\$spacer\$post_name</td>
+            <td>\$name</td>
+            <td>url</td>
+        </tr>";
+
+// 数据数据
+$Tree->get_tree(0, $str);
+// 树形数组
+$Tree->get_tree_array(0, $str);
+```
 ## License
 
 [MIT](./LICENSE)
