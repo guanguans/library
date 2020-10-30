@@ -1,8 +1,3 @@
-<p align="center">
-    <a href="https://github.com/guanguans/library/tags"><img src="https://img.shields.io/github/tag/guanguans/library.svg"></a>
-    <a href="https://github.com/guanguans/library/blob/master/LICENSE"><img src="https://img.shields.io/github/license/guanguans/library.svg"></a>
-</p>
-
 # 常用工具库
 
 重构 [TinkPHP](https://github.com/top-think/thinkphp) 中的 [Library](https://github.com/top-think/thinkphp/blob/master/ThinkPHP/Library/) 
